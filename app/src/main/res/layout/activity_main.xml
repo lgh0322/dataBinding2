@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="core"
+            type="com.viatom.myapplication.Score" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+
+            android:textSize="36sp"
+            android:text="@{String.valueOf(core.getA())}"
+
+            app:layout_constraintBottom_toTopOf="@+id/btna2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btna2"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:text="+2"
+            android:textColor="@android:color/white"
+            android:theme="@style/Theme.MaterialComponents"
+            app:backgroundTint="@color/design_default_color_secondary"
+            app:cornerRadius="20dp"
+            android:onClick="@{()->core.addA(2)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
